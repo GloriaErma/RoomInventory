@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Inventory - Starter Code
 ==================================
 
@@ -34,3 +35,7 @@ Getting Started
 ---------------
 
 1. Download and run the app.
+=======
+# RoomInventory
+Creaste APP que puede conservar datos con Room. RecyclerView a tu app para mostrar los elementos en la base de datos y agregar nuevas funciones a la app, como borrar y actualizar entidades.
+>>>>>>> 521323cde19010ea96be0f46589250a5bcd4f5a7
