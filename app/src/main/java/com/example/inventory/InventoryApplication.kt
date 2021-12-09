@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright (C) 2021 The Android Open Source Project.
  *
@@ -13,14 +14,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 package com.example.inventory
 
 import android.app.Application
 import com.example.inventory.data.ItemRoomDatabase
 
+<<<<<<< HEAD
 
 class InventoryApplication : Application() {
     // Using by lazy so the database is only created when needed
     // rather than when the application starts
     val database: ItemRoomDatabase by lazy { ItemRoomDatabase.getDatabase(this) }
 }
+=======
+class InventoryApplication : Application(){
+    val database: ItemRoomDatabase by lazy { ItemRoomDatabase.getDatabase(this) }
+}
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3

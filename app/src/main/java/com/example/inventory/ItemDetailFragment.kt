@@ -16,16 +16,25 @@
 
 package com.example.inventory
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+<<<<<<< HEAD
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.inventory.data.Item
 import com.example.inventory.data.getFormattedPrice
+=======
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 import com.example.inventory.databinding.FragmentItemDetailBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
@@ -34,6 +43,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
  */
 class ItemDetailFragment : Fragment() {
     private val navigationArgs: ItemDetailFragmentArgs by navArgs()
+<<<<<<< HEAD
     lateinit var item: Item
 
     private val viewModel: InventoryViewModel by activityViewModels {
@@ -41,6 +51,8 @@ class ItemDetailFragment : Fragment() {
             (activity?.application as InventoryApplication).database.itemDao()
         )
     }
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 
     private var _binding: FragmentItemDetailBinding? = null
     private val binding get() = _binding!!
@@ -55,6 +67,7 @@ class ItemDetailFragment : Fragment() {
     }
 
     /**
+<<<<<<< HEAD
      * Binds views with the passed in item data.
      */
     private fun bind(item: Item) {
@@ -81,6 +94,8 @@ class ItemDetailFragment : Fragment() {
     }
 
     /**
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
      * Displays an alert dialog to get the user's confirmation before deleting the item.
      */
     private fun showConfirmationDialog() {
@@ -99,6 +114,7 @@ class ItemDetailFragment : Fragment() {
      * Deletes the current item and navigates to the list fragment.
      */
     private fun deleteItem() {
+<<<<<<< HEAD
         viewModel.deleteItem(item)
         findNavController().navigateUp()
     }
@@ -115,6 +131,11 @@ class ItemDetailFragment : Fragment() {
         }
     }
 
+=======
+        findNavController().navigateUp()
+    }
+
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
     /**
      * Called when fragment is destroyed.
      */

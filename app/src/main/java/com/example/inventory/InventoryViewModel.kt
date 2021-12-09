@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright (C) 2021 The Android Open Source Project.
  *
@@ -20,11 +21,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
+=======
+package com.example.inventory
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 import androidx.lifecycle.viewModelScope
 import com.example.inventory.data.Item
 import com.example.inventory.data.ItemDao
 import kotlinx.coroutines.launch
 
+<<<<<<< HEAD
 /**
  * View Model to keep a reference to the Inventory repository and an up-to-date list of all items.
  *
@@ -78,10 +86,26 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
     /**
      * Inserts the new Item into database.
      */
+=======
+class InventoryViewModel (private val itemDao: ItemDao) : ViewModel() {
+    private fun insertItem(item: Item) {
+        viewModelScope.launch {
+            itemDao.insert(item)
+        }
+    }
+    private fun getNewItemEntry(itemName: String, itemPrice: String, itemCount: String): Item {
+        return Item(
+            itemName = itemName,
+            itemPrice = itemPrice.toDouble(),
+            quantityInStock = itemCount.toInt()
+        )
+    }
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
     fun addNewItem(itemName: String, itemPrice: String, itemCount: String) {
         val newItem = getNewItemEntry(itemName, itemPrice, itemCount)
         insertItem(newItem)
     }
+<<<<<<< HEAD
 
     /**
      * Launching a new coroutine to insert an item in a non-blocking way
@@ -111,12 +135,15 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
     /**
      * Returns true if the EditTexts are not empty
      */
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
     fun isEntryValid(itemName: String, itemPrice: String, itemCount: String): Boolean {
         if (itemName.isBlank() || itemPrice.isBlank() || itemCount.isBlank()) {
             return false
         }
         return true
     }
+<<<<<<< HEAD
 
     /**
      * Returns an instance of the [Item] entity class with the item info entered by the user.
@@ -154,6 +181,12 @@ class InventoryViewModel(private val itemDao: ItemDao) : ViewModel() {
  */
 class InventoryViewModelFactory(private val itemDao: ItemDao) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
+=======
+}
+
+class InventoryViewModelFactory(private val itemDao: ItemDao) : ViewModelProvider.Factory {
+    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
         if (modelClass.isAssignableFrom(InventoryViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
             return InventoryViewModel(itemDao) as T

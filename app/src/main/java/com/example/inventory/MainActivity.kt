@@ -15,6 +15,11 @@
  */
 package com.example.inventory
 
+<<<<<<< HEAD
+=======
+//https://developer.android.com/codelabs/basic-android-kotlin-training-persisting-data-room?hl=es-419#2
+
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController

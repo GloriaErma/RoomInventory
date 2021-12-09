@@ -21,7 +21,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
+<<<<<<< HEAD
 import android.widget.TextView
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -29,6 +32,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.inventory.data.Item
 import com.example.inventory.databinding.FragmentAddItemBinding
 
+<<<<<<< HEAD
 /**
  * Fragment to add or update an item in the Inventory database.
  */
@@ -37,15 +41,29 @@ class AddItemFragment : Fragment() {
     // Use the 'by activityViewModels()' Kotlin property delegate from the fragment-ktx artifact
     // to share the ViewModel across fragments.
     private val viewModel: InventoryViewModel by activityViewModels {
+=======
+class AddItemFragment : Fragment() {
+
+    private val viewModel: InventoryViewModel by activityViewModels {
+
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
         InventoryViewModelFactory(
             (activity?.application as InventoryApplication).database
                 .itemDao()
         )
     }
+<<<<<<< HEAD
     private val navigationArgs: ItemDetailFragmentArgs by navArgs()
 
     lateinit var item: Item
 
+=======
+
+    lateinit var item: Item
+
+    private val navigationArgs: ItemDetailFragmentArgs by navArgs()
+
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
     // Binding object instance corresponding to the fragment_add_item.xml layout
     // This property is non-null between the onCreateView() and onDestroyView() lifecycle callbacks,
     // when the view hierarchy is attached to the fragment
@@ -60,14 +78,18 @@ class AddItemFragment : Fragment() {
         _binding = FragmentAddItemBinding.inflate(inflater, container, false)
         return binding.root
     }
+<<<<<<< HEAD
 
     /**
      * Returns true if the EditTexts are not empty
      */
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
     private fun isEntryValid(): Boolean {
         return viewModel.isEntryValid(
             binding.itemName.text.toString(),
             binding.itemPrice.text.toString(),
+<<<<<<< HEAD
             binding.itemCount.text.toString(),
         )
     }
@@ -88,6 +110,11 @@ class AddItemFragment : Fragment() {
     /**
      * Inserts the new Item into database and navigates up to list fragment.
      */
+=======
+            binding.itemCount.text.toString()
+        )
+    }
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
     private fun addNewItem() {
         if (isEntryValid()) {
             viewModel.addNewItem(
@@ -98,6 +125,7 @@ class AddItemFragment : Fragment() {
             val action = AddItemFragmentDirections.actionAddItemFragmentToItemListFragment()
             findNavController().navigate(action)
         }
+<<<<<<< HEAD
     }
 
     /**
@@ -141,6 +169,16 @@ class AddItemFragment : Fragment() {
     /**
      * Called before fragment is destroyed.
      */
+=======
+
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.saveAction.setOnClickListener {
+            addNewItem()
+        }
+    }
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
     override fun onDestroyView() {
         super.onDestroyView()
         // Hide keyboard.

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright (C) 2021 The Android Open Source Project.
  *
@@ -46,3 +47,23 @@ interface ItemDao {
     @Delete
     suspend fun delete(item: Item)
 }
+=======
+package com.example.inventory.data
+
+import androidx.room.*
+import kotlinx.coroutines.flow.Flow
+
+@Dao
+interface ItemDao {
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun insert(item: Item)
+    @Update
+    suspend fun update(item: Item)
+    @Delete
+    suspend fun delete(item: Item)
+    @Query("SELECT * from item WHERE id = :id")
+    fun getItem(id: Int): Flow<Item>
+    @Query("SELECT * from item ORDER BY name ASC")
+    fun getItems(): Flow<List<Item>>
+}
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3

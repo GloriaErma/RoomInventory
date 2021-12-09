@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright (C) 2021 The Android Open Source Project.
  *
@@ -13,16 +14,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 package com.example.inventory.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+<<<<<<< HEAD
 import java.text.NumberFormat
 
 /**
  * Entity data class represents a single row in the database.
  */
+=======
+
+//prefijo data
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 @Entity
 data class Item(
     @PrimaryKey(autoGenerate = true)
@@ -32,6 +40,7 @@ data class Item(
     @ColumnInfo(name = "price")
     val itemPrice: Double,
     @ColumnInfo(name = "quantity")
+<<<<<<< HEAD
     val quantityInStock: Int,
 )
 /**
@@ -39,3 +48,7 @@ data class Item(
  */
 fun Item.getFormattedPrice(): String =
     NumberFormat.getCurrencyInstance().format(itemPrice)
+=======
+    val quantityInStock: Int
+)
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3

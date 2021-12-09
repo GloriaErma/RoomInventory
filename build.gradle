@@ -51,4 +51,8 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3

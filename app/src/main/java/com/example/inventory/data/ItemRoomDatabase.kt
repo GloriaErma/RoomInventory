@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Copyright (C) 2021 The Android Open Source Project.
  *
@@ -14,6 +15,8 @@
  * limitations under the License.
  */
 
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 package com.example.inventory.data
 
 import android.content.Context
@@ -21,27 +24,37 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
+<<<<<<< HEAD
 /**
  * Database class with a singleton INSTANCE object.
  */
 @Database(entities = [Item::class], version = 1, exportSchema = false)
 abstract class ItemRoomDatabase : RoomDatabase() {
 
+=======
+@Database(entities = [Item::class], version = 1, exportSchema = false)
+abstract class ItemRoomDatabase : RoomDatabase() {
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
     abstract fun itemDao(): ItemDao
 
     companion object {
         @Volatile
         private var INSTANCE: ItemRoomDatabase? = null
+<<<<<<< HEAD
 
         fun getDatabase(context: Context): ItemRoomDatabase {
             // if the INSTANCE is not null, then return it,
             // if it is, then create the database
+=======
+        fun getDatabase(context: Context): ItemRoomDatabase {
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
             return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     ItemRoomDatabase::class.java,
                     "item_database"
                 )
+<<<<<<< HEAD
                     // Wipes and rebuilds instead of migrating if no Migration object.
                     // Migration is not part of this codelab.
                     .fallbackToDestructiveMigration()
@@ -49,6 +62,12 @@ abstract class ItemRoomDatabase : RoomDatabase() {
                 INSTANCE = instance
                 // return instance
                 instance
+=======
+                    .fallbackToDestructiveMigration()
+                    .build()
+                INSTANCE = instance
+                return instance
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
             }
         }
     }

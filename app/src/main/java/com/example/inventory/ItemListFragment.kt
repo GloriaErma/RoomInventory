@@ -21,7 +21,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+<<<<<<< HEAD
 import androidx.fragment.app.activityViewModels
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.inventory.databinding.ItemListFragmentBinding
@@ -30,11 +33,14 @@ import com.example.inventory.databinding.ItemListFragmentBinding
  * Main fragment displaying details for all items in the database.
  */
 class ItemListFragment : Fragment() {
+<<<<<<< HEAD
     private val viewModel: InventoryViewModel by activityViewModels {
         InventoryViewModelFactory(
             (activity?.application as InventoryApplication).database.itemDao()
         )
     }
+=======
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
 
     private var _binding: ItemListFragmentBinding? = null
     private val binding get() = _binding!!
@@ -50,6 +56,7 @@ class ItemListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+<<<<<<< HEAD
 
         val adapter = ItemListAdapter {
             val action =
@@ -66,6 +73,9 @@ class ItemListFragment : Fragment() {
             }
         }
 
+=======
+        binding.recyclerView.layoutManager = LinearLayoutManager(this.context)
+>>>>>>> c3234075bb15a82a366331ae2fae83933fd309d3
         binding.floatingActionButton.setOnClickListener {
             val action = ItemListFragmentDirections.actionItemListFragmentToAddItemFragment(
                 getString(R.string.add_fragment_title)
